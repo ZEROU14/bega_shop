@@ -3,7 +3,14 @@
 {% block page_title %}HomePage{% endblock page_title %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
+    <span>hello {{user.email}}</span> | <a href="{% url "account_logout" %}">LogOut</a>
+    {% else %}    
+<a href="{% url "account_login" %}">LogIn</a> |
+<a href="{% url "account_signup" %}">Signup</a>
+    {% endif %}
+<a href=""></a>
+<br>
 welcome dude
-
+<p>Home Page</p>
 {% endblock content %}
