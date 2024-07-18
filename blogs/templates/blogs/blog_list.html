@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+
+{% block page_title %} Blog Page {% endblock  %}
+
+
+
+{% block content %}
+    {% for blog in blogs %}
+
+
+    <h3>{{blog.title}}</h3>
+    <br>
+
+    
+    {% endfor %}
+{% endblock  %}
