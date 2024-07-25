@@ -36,17 +36,17 @@ class ActiveCommentsManager(models.Manager):
 
 class Comments(models.Model):
     PRODUCT_STARS = [
-        ('1', 'very bad'),
-        ('2','bad'),
-        ('3','noraml'),
-        ('4','good'),
-        ('5','very good'),
+        ('1', 'خیلی بد'),
+        ('2','بد'),
+        ('3','عادی'),
+        ('4','خوب'),
+        ('5','خیلی خوب'),
         
     ]
     product = models.ForeignKey(Products,on_delete=models.CASCADE,related_name='comments')
-    body = models.TextField()
+    body = models.TextField(verbose_name='متن نظر')
     author = models.ForeignKey(get_user_model(),on_delete=models.CASCADE,related_name='comments')
-    stars = models.CharField(max_length=10 ,choices=PRODUCT_STARS )
+    stars = models.CharField(max_length=10 ,choices=PRODUCT_STARS , verbose_name='امتیاز شما')
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
