@@ -6,8 +6,14 @@ from django.views import generic
 
 from .forms import CommentForm
 from .models import Products,Comments
-
+from django.utils.translation import gettext as _
 # Create your views here.
+
+def test(request):
+    result = _('Hello')
+    return HttpResponse(result)
+
+
 class ProductViews(generic.ListView):
     # model = Products
     queryset = Products.objects.filter(active = True)

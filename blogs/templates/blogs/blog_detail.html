@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+
+
+{% block page_title%}{{blogs.title}}{% endblock %}
+
+
+
+{% block content %}
+{{blogs.title}}
+<br>
+{{blogs.description}}
+<br>
+{{blogs.datetime_created}}
+
+{% endblock  %}
