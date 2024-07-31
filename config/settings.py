@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 
     'allauth',
     'allauth.account',
+    'rosetta',
  
 
     'accounts',
@@ -149,11 +150,21 @@ LANGUAGE_CODE = 'fa'
 
 TIME_ZONE = 'Asia/Tehran'
 
+LANGUAGES = (
+    ('en' , 'English'),
+    ('fa', 'Persian'),
+)
+
 USE_I18N = True
 
 USE_L10N = True 
 
 USE_TZ = True
+
+
+LOCALE_PATHS = (
+'templates/locale',
+)
 
 
 # Static files (CSS, JavaScript, Images)
@@ -190,3 +201,12 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+# for messages 
+
+from django.contrib.messages import constants as messages_constans
+
+MESSAGE_TAGS = {
+    messages_constans.ERROR : 'danger'
+}

@@ -7,12 +7,13 @@ from django.views import generic
 from .forms import CommentForm
 from .models import Products,Comments
 from django.utils.translation import gettext as _
+from django.contrib import messages
 # Create your views here.
 
 def test(request):
     result = _('Hello')
-    return HttpResponse(result)
-
+    messages.success(request,'you successfuly view this page')
+    return render (request , 'products/test.html' )
 
 class ProductViews(generic.ListView):
     # model = Products

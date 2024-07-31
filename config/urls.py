@@ -24,4 +24,7 @@ urlpatterns = [
     path('accounts/',include('allauth.urls')),
     path('products/',include("products.urls") ),
     path('blogs/',include('blogs.urls')),
+
+    #rosetta
+    path('rosetta/',include('rosetta.urls'))
 ]
