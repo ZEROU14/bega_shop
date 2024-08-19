@@ -26,5 +26,6 @@ urlpatterns = [
     path('blogs/',include('blogs.urls')),
 
     #rosetta
-    path('rosetta/',include('rosetta.urls'))
+    path('rosetta/',include('rosetta.urls')),
+    path('cart/',include('cart.urls'))
 ]
