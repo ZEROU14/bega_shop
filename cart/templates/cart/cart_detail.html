@@ -24,6 +24,7 @@
   <!-- Breadcrumb area End --> {% endcomment %}
 
   <!-- Main Content Wrapper Start -->
+  {% include 'topheader.html' with header_name="Cart" %}
   <div class="main-content-wrapper">
     <div class="page-content-inner ptb--80">
       <div class="container">
@@ -132,6 +133,9 @@
           <div class= 'position-absolute top-50 start-50 translate-middle ,'>
             <form action="{% url "products" %}">
               {% csrf_token %}
+              <br>
+              <br>
+              <br>
             <button  type="submit" class="btn btn-danger">
               {% trans "Go Shopping" %}
             </button>

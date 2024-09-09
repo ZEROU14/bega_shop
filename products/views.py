@@ -50,3 +50,4 @@ class CommentCreateView(generic.CreateView):
         messages.success(self.request,'your comment is down there and you can see it dude')
 
         return super().form_valid(form)
+  
